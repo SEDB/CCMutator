@@ -25,11 +25,12 @@ CCMutator comes with another tool
 Most operators work similarly for both C++11 and POSIX (PThread) libraries.
 
 #### Condition Variables
+1. Modify wait time for `cond_timed_wait()`
 1. Remove call to `cond_wait()`
 1. Remove call to `cond_timed_wait()`
-1. Modify wait time for `cond_timed_wait()`
 1. Switch `cond_timed_wait()` to `cond_wait`
 1. Remove call to `cond_signal()` (POSIX only)
+1. Remove call to`cond_broadcast()` (POSIX only)
 1. Replace call to `cond_signal()` with `cond_broadcast()` (POSIX only)
 1. Replace call to `cond_broadcast()` with `cond_signal()` (POSIX only)
 
@@ -39,6 +40,7 @@ Most operators work similarly for both C++11 and POSIX (PThread) libraries.
 1. Shrink critical section
 1. Expand critical section
 1. Split critical section 
+1. Shift critical section
 
 #### Semaphores
 1. Modify permit count on semaphore (POSIX only)
@@ -76,6 +78,9 @@ All atomic operators only applicable to C++11
 1. Replace cross-thread sync compare exchange with single-thread
 
 ## Installation
+The tool was developed and tested using LLVM 3.2. The source code for LLVM 3.2
+can be downloaded here: http://llvm.org/releases/3.2/llvm-3.2.src.tar.gz .
+
 A `configure` script is provided that at least needs to have the following passed to it:
 
 1. `--with-llvmsrc <Location of LLVM Source Code>`
@@ -90,6 +95,12 @@ For example:
 Then simply run `make` and `make install`.
 
 This creates a set of library files in `<installDir>/lib`. 
+
+If LLVM is not availible the shell script `./install_everything.sh` will download LLVM 3.2,
+compile LLVM and then compile CCMutator. Installation will be relative to
+CCMutator top directory (the directory this README is in). The CCMutator
+library files will be located in `./install`.
+
 
 ## Usage
 The result of installation is a set of library files that can be loaded by

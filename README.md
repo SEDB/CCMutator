@@ -19,7 +19,8 @@ possible combinations of mutations can still be created potentially with each
 `opt` pass running as it's own process. See `./scripts` for some examples of
 scripts used to generate all combinations of mutants.
 
-CCMutator comes with another tool 
+CCMutator comes with another tool `./combinations` to generate numberical
+combinations for easier automation of mutant generation.
 
 ### Operators
 Most operators work similarly for both C++11 and POSIX (PThread) libraries.

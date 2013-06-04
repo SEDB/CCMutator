@@ -2,10 +2,13 @@
 Author: Markus Kusano `<mukusano at vt dot edu>`
 
 ## Requirements
-LLVM source code and object files (tested using LLVM-3.2)
+LLVM source code and object files (tested using LLVM-3.2). Clang is required to
+make LLVM bitcode files from C/C++ source code.
 
 The source is released under the University of Illinois/NCSA public license
 (free, non-viral/copyleft).
+
+CCMutator has been tested on 32-bit Gentoo Linux and Ubuntu 12.1.
 
 ## Description
 CCMutator is a set of partial and higher order mutation operators implemented

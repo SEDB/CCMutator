@@ -7,7 +7,7 @@ wget http://llvm.org/releases/3.2/llvm-3.2.src.tar.gz || exit 1
 tar -xzvf llvm-3.2.src.tar.gz || exit 1
 cd llvm-3.2.src 
 mkdir ./install
-./configure --prefix=`pwd`/install || echo "Error: Error configuring LLVM" && exit 1
+./configure --prefix=`pwd`/install
 make || echo "Error: make failed for LLVM" && exit 1
 make install
 cd ..

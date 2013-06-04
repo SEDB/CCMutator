@@ -9,15 +9,17 @@ The source is released under the University of Illinois/NCSA public license
 
 ## Description
 CCMutator is a set of partial and higher order mutation operators implemented
-as `opt` passes on LLVM IR. Partial mutation operators allows for some subset of
-mutations to occur. For example, instead of removing all calls to
-`pthread_join` or creating all combinations or mutations the user can specify
-which occurances to remove.
+as `opt` passes on LLVM IR. Partial mutation operators allows for some subset
+of mutations to occur. For example, instead of removing all calls to
+`pthread_join` the user can specify which occurances to remove.
 
 The passes do not modify the input LLVM bitcode file, this allows for easy
 process level concurrency to be obtained using the UNIX `&` operator. All
 possible combinations of mutations can still be created potentially with each
-`opt` pass running as it's own process. 
+`opt` pass running as it's own process. See `./scripts` for some examples of
+scripts used to generate all combinations of mutants.
+
+CCMutator comes with another tool 
 
 ### Operators
 Most operators work similarly for both C++11 and POSIX (PThread) libraries.
@@ -53,6 +55,7 @@ Most operators work similarly for both C++11 and POSIX (PThread) libraries.
 
 #### Atomic Objects
 All atomic operators only applicable to C++11
+
 1. Remove memory fence & n/a & \checkmark
 1. Modify memory fence ordering constraint
 1. Replace single-thread sync fence with cross-thread

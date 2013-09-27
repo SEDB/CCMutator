@@ -113,3 +113,10 @@ The result of installation is a set of library files that can be loaded by
 `./lib/ccmutate` contains the source files and `README`s for each mutation
 operator. See these `README`s for information on using each individual operator.
 The operators also have test scripts that show examples of their use.
+
+## Issues
+* Parallel make (`-j`) appears to not work due to dependency issues
+
+* Using a different version of opt/clang/llvm than what is hooked up with
+  CCmutator during `./configure` can result in issues due to feature
+  additions/changes.

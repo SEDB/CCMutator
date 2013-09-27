@@ -35,7 +35,7 @@
 #include <cerrno>
 
 // Enable debugging output
-#define DEBUG
+//#define DEBUG
 
 long n;  // The size of the input set (spans from 0 to n)
 long k;  // The size of the pick set ie {0,1}, {0,2} k=2

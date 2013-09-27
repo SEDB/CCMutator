@@ -31,7 +31,7 @@
 #include "LockUnlockPairs.h"
 
 // Enable debugging messages
-#define MUT_DEBUG
+//#define MUT_DEBUG
 
 using namespace llvm;
 

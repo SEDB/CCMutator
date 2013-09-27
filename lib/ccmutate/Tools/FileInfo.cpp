@@ -10,6 +10,7 @@
  * instruction
  */
 #include "FileInfo.h"
+#include "llvm/Support/raw_ostream.h"
 #include <climits>
 
 StringRef getDebugFilename(Instruction *inst) {
@@ -18,6 +19,10 @@ StringRef getDebugFilename(Instruction *inst) {
 
     if (metaNode) {
         DILocation Loc(metaNode);
+
+        if (!Loc.Verify())
+          return "";
+
         return Loc.getFilename();
     }
     return "";

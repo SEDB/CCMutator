@@ -555,8 +555,8 @@ void LockUnlockPairs::printDebugInfo(Instruction *lockCall, Instruction *unlockC
     }
 
     // Unlock call filename and line number
-    StringRef fileName2 = getDebugFilename(lockCall);
-    unsigned lineNum2 = getDebugLineNum(lockCall);
+    StringRef fileName2 = getDebugFilename(unlockCall);
+    unsigned lineNum2 = getDebugLineNum(unlockCall);
     if (fileName2 == "") {
         errs() << "\tno debug filename for lock call";
     }
